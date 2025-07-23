@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras corporais e de saúde: IMC, TMB, gordura corporal, peso ideal, RCQ, idade metabólica e IAC. Ferramentas precisas e gratuitas.">
+    <meta name="keywords" content="IMC, TMB, gordura corporal, peso ideal, RCQ, idade metabólica, IAC, calculadora saúde">
+    <title>Calculadoras Corporais e de Saúde - Ferramentas Profissionais</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+   </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadoras.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-calculator nav__icon"></i>
+                    <span class="nav__title">Calcule Sua Saúde</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#calculadoras" class="nav__link active">Calculadoras</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__breadcrumb">
+                        <a href="../index.html">Início</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Calculadoras Corporais</span>
+                    </div>
+                    <h1 class="page-header__title">
+                        <i class="fas fa-user"></i>
+                        Calculadoras Corporais e de Saúde
+                    </h1>
+                    <p class="page-header__description">
+                        Ferramentas precisas para avaliar sua composição corporal e indicadores de saúde
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Navigation -->
+        <section class="calculator-nav">
+            <div class="container">
+                <div class="calculator-nav__tabs">
+                    <button class="tab-btn active" data-calculator="imc">
+                        <i class="fas fa-weight"></i>
+                        IMC
+                    </button>
+                    <button class="tab-btn" data-calculator="tmb">
+                        <i class="fas fa-fire"></i>
+                        TMB
+                    </button>
+                    <button class="tab-btn" data-calculator="gordura">
+                        <i class="fas fa-percentage"></i>
+                        Gordura
+                    </button>
+                    <button class="tab-btn" data-calculator="massa">
+                        <i class="fas fa-balance-scale"></i>
+                        Massa
+                    </button>
+                    <button class="tab-btn" data-calculator="peso-ideal">
+                        <i class="fas fa-target"></i>
+                        Peso Ideal
+                    </button>
+                    <button class="tab-btn" data-calculator="rcq">
+                        <i class="fas fa-ruler"></i>
+                        RCQ
+                    </button>
+                    <button class="tab-btn" data-calculator="idade-metabolica">
+                        <i class="fas fa-clock"></i>
+                        Idade Metabólica
+                    </button>
+                    <button class="tab-btn" data-calculator="iac">
+                        <i class="fas fa-chart-line"></i>
+                        IAC
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators -->
+        <section class="calculators" id="calculadoras">
+            <div class="container">
+                <!-- IMC Calculator -->
+                <div class="calculator active" id="imc">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de IMC</h2>
+                        <p class="calculator__description">
+                            O Índice de Massa Corporal (IMC) é uma medida que relaciona peso e altura para avaliar se uma pessoa está dentro do peso ideal.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="imc-form">
+                            <div class="form-group">
+                                <label for="imc-peso">Peso (kg)</label>
+                                <input type="number" id="imc-peso" step="0.1" min="1" max="300" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="imc-altura">Altura (cm)</label>
+                                <input type="number" id="imc-altura" step="0.1" min="50" max="250" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-calculator"></i>
+                                Calcular IMC
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="imc-result">
+                            <div class="result__card">
+                                <h3 class="result__title">Seu IMC</h3>
+                                <div class="result__value" id="imc-value">--</div>
+                                <div class="result__classification" id="imc-classification">--</div>
+                                <div class="result__actions">
+                                    <button class="btn btn--secondary" onclick="copyResult('imc')">
+                                        <i class="fas fa-copy"></i>
+                                        Copiar
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Classificação do IMC</h4>
+                                <div class="imc-table">
+                                    <div class="imc-row">
+                                        <span class="imc-range">Abaixo de 18,5</span>
+                                        <span class="imc-class underweight">Abaixo do peso</span>
+                                    </div>
+                                    <div class="imc-row">
+                                        <span class="imc-range">18,5 - 24,9</span>
+                                        <span class="imc-class normal">Peso normal</span>
+                                    </div>
+                                    <div class="imc-row">
+                                        <span class="imc-range">25,0 - 29,9</span>
+                                        <span class="imc-class overweight">Sobrepeso</span>
+                                    </div>
+                                    <div class="imc-row">
+                                        <span class="imc-range">30,0 - 34,9</span>
+                                        <span class="imc-class obese1">Obesidade Grau I</span>
+                                    </div>
+                                    <div class="imc-row">
+                                        <span class="imc-range">35,0 - 39,9</span>
+                                        <span class="imc-class obese2">Obesidade Grau II</span>
+                                    </div>
+                                    <div class="imc-row">
+                                        <span class="imc-range">Acima de 40,0</span>
+                                        <span class="imc-class obese3">Obesidade Grau III</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TMB Calculator -->
+                <div class="calculator" id="tmb">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de TMB</h2>
+                        <p class="calculator__description">
+                            A Taxa Metabólica Basal (TMB) é a quantidade mínima de energia que seu corpo precisa para manter as funções vitais em repouso.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="tmb-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tmb-peso">Peso (kg)</label>
+                                    <input type="number" id="tmb-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="tmb-altura">Altura (cm)</label>
+                                    <input type="number" id="tmb-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="tmb-idade">Idade (anos)</label>
+                                    <input type="number" id="tmb-idade" min="1" max="120" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="tmb-sexo">Sexo</label>
+                                    <select id="tmb-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="tmb-atividade">Nível de Atividade</label>
+                                <select id="tmb-atividade" required>
+                                    <option value="">Selecione seu nível de atividade</option>
+                                    <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+                                    <option value="1.375">Levemente ativo (exercício leve 1-3 dias/semana)</option>
+                                    <option value="1.55">Moderadamente ativo (exercício moderado 3-5 dias/semana)</option>
+                                    <option value="1.725">Muito ativo (exercício intenso 6-7 dias/semana)</option>
+                                    <option value="1.9">Extremamente ativo (exercício muito intenso, trabalho físico)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-fire"></i>
+                                Calcular TMB
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="tmb-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">TMB</h3>
+                                    <div class="result__value" id="tmb-value">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Gasto Total</h3>
+                                    <div class="result__value" id="tmb-total">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('tmb')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gordura Corporal Calculator -->
+                <div class="calculator" id="gordura">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Gordura Corporal</h2>
+                        <p class="calculator__description">
+                            Estima o percentual de gordura corporal usando a fórmula da Marinha Americana, baseada em medidas corporais.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="gordura-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="gordura-altura">Altura (cm)</label>
+                                    <input type="number" id="gordura-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gordura-sexo">Sexo</label>
+                                    <select id="gordura-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="gordura-cintura">Cintura (cm)</label>
+                                    <input type="number" id="gordura-cintura" step="0.1" min="30" max="200" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gordura-pescoco">Pescoço (cm)</label>
+                                    <input type="number" id="gordura-pescoco" step="0.1" min="20" max="60" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="gordura-quadril-group" style="display: none;">
+                                <label for="gordura-quadril">Quadril (cm)</label>
+                                <input type="number" id="gordura-quadril" step="0.1" min="50" max="200">
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-percentage"></i>
+                                Calcular Gordura
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="gordura-result">
+                            <div class="result__card">
+                                <h3 class="result__title">Gordura Corporal</h3>
+                                <div class="result__value" id="gordura-value">--</div>
+                                <div class="result__unit">%</div>
+                                <div class="result__classification" id="gordura-classification">--</div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('gordura')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Massa Magra e Gorda Calculator -->
+                <div class="calculator" id="massa">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Massa Magra e Gorda</h2>
+                        <p class="calculator__description">
+                            Calcula a distribuição entre massa magra (músculos, ossos, órgãos) e massa gorda do seu corpo.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="massa-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="massa-peso">Peso (kg)</label>
+                                    <input type="number" id="massa-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="massa-gordura">Gordura Corporal (%)</label>
+                                    <input type="number" id="massa-gordura" step="0.1" min="1" max="50" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-balance-scale"></i>
+                                Calcular Massa
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="massa-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Massa Gorda</h3>
+                                    <div class="result__value" id="massa-gorda-value">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Massa Magra</h3>
+                                    <div class="result__value" id="massa-magra-value">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('massa')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peso Ideal Calculator -->
+                <div class="calculator" id="peso-ideal">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Peso Ideal</h2>
+                        <p class="calculator__description">
+                            Calcula o peso ideal usando diferentes fórmulas reconhecidas cientificamente.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="peso-ideal-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="peso-ideal-altura">Altura (cm)</label>
+                                    <input type="number" id="peso-ideal-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="peso-ideal-sexo">Sexo</label>
+                                    <select id="peso-ideal-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="peso-ideal-idade">Idade (anos)</label>
+                                <input type="number" id="peso-ideal-idade" min="1" max="120" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-target"></i>
+                                Calcular Peso Ideal
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="peso-ideal-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Fórmula de Robinson</h3>
+                                    <div class="result__value" id="peso-robinson">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Fórmula de Miller</h3>
+                                    <div class="result__value" id="peso-miller">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Fórmula de Devine</h3>
+                                    <div class="result__value" id="peso-devine">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                                
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Peso Ideal Médio</h3>
+                                    <div class="result__value" id="peso-medio">--</div>
+                                    <div class="result__unit">kg</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('peso-ideal')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RCQ Calculator -->
+                <div class="calculator" id="rcq">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de RCQ</h2>
+                        <p class="calculator__description">
+                            A Relação Cintura-Quadril (RCQ) avalia a distribuição de gordura corporal e riscos à saúde.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="rcq-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rcq-cintura">Cintura (cm)</label>
+                                    <input type="number" id="rcq-cintura" step="0.1" min="30" max="200" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rcq-quadril">Quadril (cm)</label>
+                                    <input type="number" id="rcq-quadril" step="0.1" min="50" max="200" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rcq-sexo">Sexo</label>
+                                <select id="rcq-sexo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-ruler"></i>
+                                Calcular RCQ
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="rcq-result">
+                            <div class="result__card">
+                                <h3 class="result__title">RCQ</h3>
+                                <div class="result__value" id="rcq-value">--</div>
+                                <div class="result__classification" id="rcq-classification">--</div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('rcq')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Idade Metabólica Calculator -->
+                <div class="calculator" id="idade-metabolica">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Idade Metabólica</h2>
+                        <p class="calculator__description">
+                            Estima sua idade metabólica comparando sua TMB com a média de pessoas da sua idade.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="idade-metabolica-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idade-peso">Peso (kg)</label>
+                                    <input type="number" id="idade-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="idade-altura">Altura (cm)</label>
+                                    <input type="number" id="idade-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="idade-idade">Idade Real (anos)</label>
+                                    <input type="number" id="idade-idade" min="18" max="80" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="idade-sexo">Sexo</label>
+                                    <select id="idade-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-clock"></i>
+                                Calcular Idade Metabólica
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="idade-metabolica-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Idade Real</h3>
+                                    <div class="result__value" id="idade-real">--</div>
+                                    <div class="result__unit">anos</div>
+                                </div>
+                                
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Idade Metabólica</h3>
+                                    <div class="result__value" id="idade-metabolica-value">--</div>
+                                    <div class="result__unit">anos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="idade-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('idade-metabolica')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IAC Calculator -->
+                <div class="calculator" id="iac">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de IAC</h2>
+                        <p class="calculator__description">
+                            O Índice de Adiposidade Corporal (IAC) estima o percentual de gordura corporal usando apenas altura e quadril.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="iac-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="iac-altura">Altura (cm)</label>
+                                    <input type="number" id="iac-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="iac-quadril">Quadril (cm)</label>
+                                    <input type="number" id="iac-quadril" step="0.1" min="50" max="200" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="iac-sexo">Sexo</label>
+                                <select id="iac-sexo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-chart-line"></i>
+                                Calcular IAC
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="iac-result">
+                            <div class="result__card">
+                                <h3 class="result__title">IAC</h3>
+                                <div class="result__value" id="iac-value">--</div>
+                                <div class="result__unit">%</div>
+                                <div class="result__classification" id="iac-classification">--</div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('iac')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <i class="fas fa-calculator footer__icon"></i>
+                    <span class="footer__title">Calcule Sua Saúde</span>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Início</a>
+                    <a href="#calculadoras" class="footer__link">Calculadoras</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                </p>
+                <p class="footer__disclaimer">
+                    As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/corporais.js"></script>
+</body>
+</html>

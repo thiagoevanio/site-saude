@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras de bem-estar: qualidade do sono, nível de estresse, risco de sedentarismo e consumo seguro de cafeína. Ferramentas para uma vida saudável.">
+    <meta name="keywords" content="qualidade sono, estresse, sedentarismo, cafeína, bem-estar, saúde mental">
+    <title>Calculadoras de Bem-estar - Ferramentas Profissionais</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+   </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadoras.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-calculator nav__icon"></i>
+                    <span class="nav__title">Calcule Sua Saúde</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#calculadoras" class="nav__link active">Calculadoras</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__breadcrumb">
+                        <a href="../index.html">Início</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Calculadoras de Bem-estar</span>
+                    </div>
+                    <h1 class="page-header__title">
+                        <i class="fas fa-heart"></i>
+                        Calculadoras de Bem-estar
+                    </h1>
+                    <p class="page-header__description">
+                        Ferramentas para avaliar e melhorar sua qualidade de vida e saúde mental
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Navigation -->
+        <section class="calculator-nav">
+            <div class="container">
+                <div class="calculator-nav__tabs">
+                    <button class="tab-btn active" data-calculator="qualidade-sono">
+                        <i class="fas fa-bed"></i>
+                        Qualidade do Sono
+                    </button>
+                    <button class="tab-btn" data-calculator="nivel-estresse">
+                        <i class="fas fa-brain"></i>
+                        Nível de Estresse
+                    </button>
+                    <button class="tab-btn" data-calculator="risco-sedentarismo">
+                        <i class="fas fa-couch"></i>
+                        Risco Sedentarismo
+                    </button>
+                    <button class="tab-btn" data-calculator="consumo-cafeina">
+                        <i class="fas fa-coffee"></i>
+                        Consumo Cafeína
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators -->
+        <section class="calculators" id="calculadoras">
+            <div class="container">
+                <!-- Qualidade do Sono Calculator -->
+                <div class="calculator active" id="qualidade-sono">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Qualidade do Sono</h2>
+                        <p class="calculator__description">
+                            Avalia a qualidade do seu sono e calcula ciclos de sono ideais para um descanso reparador.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="qualidade-sono-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sono-horario-dormir">Horário que vai dormir</label>
+                                    <input type="time" id="sono-horario-dormir" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sono-horario-acordar">Horário que acorda</label>
+                                    <input type="time" id="sono-horario-acordar" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sono-tempo-adormecer">Tempo para adormecer (minutos)</label>
+                                    <input type="number" id="sono-tempo-adormecer" min="1" max="120" value="15" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sono-despertares">Despertares noturnos</label>
+                                    <input type="number" id="sono-despertares" min="0" max="10" value="0" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sono-qualidade-subjetiva">Como você avalia seu sono?</label>
+                                    <select id="sono-qualidade-subjetiva" required>
+                                        <option value="">Selecione</option>
+                                        <option value="4">Muito bom</option>
+                                        <option value="3">Bom</option>
+                                        <option value="2">Regular</option>
+                                        <option value="1">Ruim</option>
+                                        <option value="0">Muito ruim</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sono-energia-dia">Energia durante o dia</label>
+                                    <select id="sono-energia-dia" required>
+                                        <option value="">Selecione</option>
+                                        <option value="4">Muita energia</option>
+                                        <option value="3">Boa energia</option>
+                                        <option value="2">Energia moderada</option>
+                                        <option value="1">Pouca energia</option>
+                                        <option value="0">Muito cansado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sono-idade">Idade (anos)</label>
+                                <input type="number" id="sono-idade" min="1" max="100" required>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-bed"></i>
+                                Avaliar Qualidade do Sono
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="qualidade-sono-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Qualidade do Sono</h3>
+                                    <div class="result__value" id="sono-score">--</div>
+                                    <div class="result__unit">pontos</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Duração Total</h3>
+                                    <div class="result__value" id="sono-duracao">--</div>
+                                    <div class="result__unit">horas</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Eficiência</h3>
+                                    <div class="result__value" id="sono-eficiencia">--</div>
+                                    <div class="result__unit">%</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Ciclos Completos</h3>
+                                    <div class="result__value" id="sono-ciclos">--</div>
+                                    <div class="result__unit">ciclos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Recomendações para Melhorar o Sono</h4>
+                                <div class="sono-recomendacoes" id="sono-recomendacoes">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('qualidade-sono')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nível de Estresse Calculator -->
+                <div class="calculator" id="nivel-estresse">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Nível de Estresse</h2>
+                        <p class="calculator__description">
+                            Avalia seu nível de estresse baseado em sintomas físicos, emocionais e comportamentais.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="nivel-estresse-form">
+                            <div class="form-section">
+                                <h4>Sintomas Físicos (últimas 2 semanas)</h4>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="2">
+                                        <span>Dores de cabeça frequentes</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="2">
+                                        <span>Tensão muscular ou dores nas costas</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="2">
+                                        <span>Problemas digestivos</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="3">
+                                        <span>Insônia ou sono perturbado</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="2">
+                                        <span>Fadiga constante</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-fisicos" value="2">
+                                        <span>Mudanças no apetite</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Sintomas Emocionais</h4>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="3">
+                                        <span>Ansiedade ou nervosismo</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="3">
+                                        <span>Irritabilidade ou raiva</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="3">
+                                        <span>Sentimentos de tristeza</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="2">
+                                        <span>Sensação de sobrecarga</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="2">
+                                        <span>Baixa autoestima</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-emocionais" value="2">
+                                        <span>Dificuldade para relaxar</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Sintomas Comportamentais</h4>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="2">
+                                        <span>Procrastinação ou evitar responsabilidades</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="2">
+                                        <span>Isolamento social</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="3">
+                                        <span>Uso excessivo de álcool, cigarro ou drogas</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="2">
+                                        <span>Comer demais ou muito pouco</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="2">
+                                        <span>Agressividade ou impaciência</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" name="sintomas-comportamentais" value="2">
+                                        <span>Dificuldade de concentração</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="estresse-trabalho">Nível de estresse no trabalho/estudos</label>
+                                    <select id="estresse-trabalho" required>
+                                        <option value="">Selecione</option>
+                                        <option value="0">Muito baixo</option>
+                                        <option value="1">Baixo</option>
+                                        <option value="2">Moderado</option>
+                                        <option value="3">Alto</option>
+                                        <option value="4">Muito alto</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="estresse-pessoal">Nível de estresse pessoal/familiar</label>
+                                    <select id="estresse-pessoal" required>
+                                        <option value="">Selecione</option>
+                                        <option value="0">Muito baixo</option>
+                                        <option value="1">Baixo</option>
+                                        <option value="2">Moderado</option>
+                                        <option value="3">Alto</option>
+                                        <option value="4">Muito alto</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-brain"></i>
+                                Avaliar Nível de Estresse
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="nivel-estresse-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Nível de Estresse</h3>
+                                    <div class="result__value" id="estresse-nivel">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Pontuação</h3>
+                                    <div class="result__value" id="estresse-pontuacao">--</div>
+                                    <div class="result__unit">pontos</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="estresse-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Estratégias de Gerenciamento</h4>
+                                <div class="estresse-estrategias" id="estresse-estrategias">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('nivel-estresse')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risco de Sedentarismo Calculator -->
+                <div class="calculator" id="risco-sedentarismo">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Risco de Sedentarismo</h2>
+                        <p class="calculator__description">
+                            Avalia seu nível de atividade física e risco de problemas relacionados ao sedentarismo.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="risco-sedentarismo-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sed-idade">Idade (anos)</label>
+                                    <input type="number" id="sed-idade" min="1" max="100" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="sed-sexo">Sexo</label>
+                                    <select id="sed-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-exercicio-semana">Quantos dias por semana você faz exercício?</label>
+                                <select id="sed-exercicio-semana" required>
+                                    <option value="">Selecione</option>
+                                    <option value="0">Nenhum dia</option>
+                                    <option value="1">1 dia</option>
+                                    <option value="2">2 dias</option>
+                                    <option value="3">3 dias</option>
+                                    <option value="4">4 dias</option>
+                                    <option value="5">5 dias</option>
+                                    <option value="6">6 dias</option>
+                                    <option value="7">7 dias</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-duracao-exercicio">Duração média dos exercícios (minutos)</label>
+                                <select id="sed-duracao-exercicio" required>
+                                    <option value="">Selecione</option>
+                                    <option value="0">Não faço exercício</option>
+                                    <option value="15">Menos de 30 minutos</option>
+                                    <option value="30">30-45 minutos</option>
+                                    <option value="60">45-60 minutos</option>
+                                    <option value="90">Mais de 60 minutos</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-intensidade">Intensidade dos exercícios</label>
+                                <select id="sed-intensidade" required>
+                                    <option value="">Selecione</option>
+                                    <option value="0">Não faço exercício</option>
+                                    <option value="1">Leve (caminhada lenta)</option>
+                                    <option value="2">Moderada (caminhada rápida, dança)</option>
+                                    <option value="3">Vigorosa (corrida, natação intensa)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-tempo-sentado">Horas por dia sentado/deitado (exceto sono)</label>
+                                <select id="sed-tempo-sentado" required>
+                                    <option value="">Selecione</option>
+                                    <option value="4">Menos de 4 horas</option>
+                                    <option value="6">4-6 horas</option>
+                                    <option value="8">6-8 horas</option>
+                                    <option value="10">8-10 horas</option>
+                                    <option value="12">Mais de 10 horas</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-trabalho">Tipo de trabalho</label>
+                                <select id="sed-trabalho" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1">Muito ativo (construção, agricultura)</option>
+                                    <option value="2">Moderadamente ativo (professor, vendedor)</option>
+                                    <option value="3">Sedentário (escritório, motorista)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="sed-transporte">Principal meio de transporte</label>
+                                <select id="sed-transporte" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1">Caminhada/bicicleta</option>
+                                    <option value="2">Transporte público (com caminhada)</option>
+                                    <option value="3">Carro/moto (porta a porta)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-couch"></i>
+                                Avaliar Risco de Sedentarismo
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="risco-sedentarismo-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Risco de Sedentarismo</h3>
+                                    <div class="result__value" id="sed-risco">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Atividade Semanal</h3>
+                                    <div class="result__value" id="sed-atividade-total">--</div>
+                                    <div class="result__unit">min/semana</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Meta OMS</h3>
+                                    <div class="result__value" id="sed-meta-oms">--</div>
+                                    <div class="result__unit">%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="sed-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Recomendações para Reduzir o Sedentarismo</h4>
+                                <div class="sed-recomendacoes" id="sed-recomendacoes">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('risco-sedentarismo')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumo de Cafeína Calculator -->
+                <div class="calculator" id="consumo-cafeina">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Consumo Seguro de Cafeína</h2>
+                        <p class="calculator__description">
+                            Calcula seu limite diário seguro de cafeína e analisa seu consumo atual.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="consumo-cafeina-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="caf-peso">Peso (kg)</label>
+                                    <input type="number" id="caf-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="caf-idade">Idade (anos)</label>
+                                    <input type="number" id="caf-idade" min="1" max="100" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="caf-gestante">Condição especial</label>
+                                    <select id="caf-gestante">
+                                        <option value="">Nenhuma</option>
+                                        <option value="gestante">Gestante</option>
+                                        <option value="lactante">Lactante</option>
+                                        <option value="hipertensao">Hipertensão</option>
+                                        <option value="ansiedade">Transtorno de ansiedade</option>
+                                        <option value="insonia">Insônia</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="caf-sensibilidade">Sensibilidade à cafeína</label>
+                                    <select id="caf-sensibilidade" required>
+                                        <option value="">Selecione</option>
+                                        <option value="baixa">Baixa (não sinto efeitos)</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="alta">Alta (fico muito agitado)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Consumo Diário Atual</h4>
+                                <div class="cafeina-items">
+                                    <div class="cafeina-item">
+                                        <label for="caf-cafe">Café (xícaras de 150ml)</label>
+                                        <input type="number" id="caf-cafe" min="0" max="20" value="0">
+                                        <span class="cafeina-mg">~95mg por xícara</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-espresso">Espresso (doses)</label>
+                                        <input type="number" id="caf-espresso" min="0" max="20" value="0">
+                                        <span class="cafeina-mg">~63mg por dose</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-cha-preto">Chá preto (xícaras)</label>
+                                        <input type="number" id="caf-cha-preto" min="0" max="20" value="0">
+                                        <span class="cafeina-mg">~47mg por xícara</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-cha-verde">Chá verde (xícaras)</label>
+                                        <input type="number" id="caf-cha-verde" min="0" max="20" value="0">
+                                        <span class="cafeina-mg">~28mg por xícara</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-refrigerante">Refrigerante de cola (latas)</label>
+                                        <input type="number" id="caf-refrigerante" min="0" max="20" value="0">
+                                        <span class="cafeina-mg">~34mg por lata</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-energetico">Energético (latas)</label>
+                                        <input type="number" id="caf-energetico" min="0" max="10" value="0">
+                                        <span class="cafeina-mg">~80mg por lata</span>
+                                    </div>
+                                    
+                                    <div class="cafeina-item">
+                                        <label for="caf-chocolate">Chocolate amargo (porções 30g)</label>
+                                        <input type="number" id="caf-chocolate" min="0" max="10" value="0">
+                                        <span class="cafeina-mg">~12mg por porção</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-coffee"></i>
+                                Calcular Consumo de Cafeína
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="consumo-cafeina-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Consumo Atual</h3>
+                                    <div class="result__value" id="caf-consumo-atual">--</div>
+                                    <div class="result__unit">mg/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Limite Seguro</h3>
+                                    <div class="result__value" id="caf-limite-seguro">--</div>
+                                    <div class="result__unit">mg/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Status</h3>
+                                    <div class="result__value" id="caf-status">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">% do Limite</h3>
+                                    <div class="result__value" id="caf-percentual">--</div>
+                                    <div class="result__unit">%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="caf-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Dicas para Consumo Consciente</h4>
+                                <div class="caf-dicas" id="caf-dicas">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('consumo-cafeina')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <i class="fas fa-calculator footer__icon"></i>
+                    <span class="footer__title">Calcule Sua Saúde</span>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Início</a>
+                    <a href="#calculadoras" class="footer__link">Calculadoras</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                </p>
+                <p class="footer__disclaimer">
+                    As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/bem-estar.js"></script>
+</body>
+</html>

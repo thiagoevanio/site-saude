@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="google-adsense-account" content="ca-pub-5825554897787593">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SaúdeCalc">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#007bff">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="Calculadoras de saúde, nutrição, fitness e bem-estar. Ferramentas profissionais para cálculo de IMC, TMB, macronutrientes, 1RM e muito mais." name="description"/>
+    <meta content="calculadora IMC, TMB, macronutrientes, fitness, saúde, nutrição, bem-estar, peso ideal, gordura corporal" name="keywords"/>
+    <meta content="Calculadoras de Saúde" name="author"/>
+    <meta content="index, follow" name="robots"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type"/>
+    <meta content="" property="og:url"/>
+    <meta content="Calculadoras de Saúde - Ferramentas Profissionais" property="og:title"/>
+    <meta content="Calculadoras de saúde, nutrição, fitness e bem-estar. Ferramentas profissionais para cálculo de IMC, TMB, macronutrientes, 1RM e muito mais." property="og:description"/>
+    <meta content="" property="og:image"/>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+   </script>
+
+    <!-- Twitter -->
+    <meta content="summary_large_image" property="twitter:card"/>
+    <meta content="" property="twitter:url"/>
+    <meta content="Calculadoras de Saúde - Ferramentas Profissionais" property="twitter:title"/>
+    <meta content="Calculadoras de saúde, nutrição, fitness e bem-estar. Ferramentas profissionais para cálculo de IMC, TMB, macronutrientes, 1RM e muito mais." property="twitter:description"/>
+    <meta content="" property="twitter:image"/>
+
+    <title>Calculadoras de Saúde - Ferramentas Profissionais para Saúde, Nutrição e Fitness</title>
+
+    <!-- Favicon -->
+    <link href="favicon.png" rel="icon" type="image/x-icon"/>
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192x192.png">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="./icons/icon-144x144.png">
+    <meta name="msapplication-square70x70logo" content="./icons/icon-72x72.png">
+    <meta name="msapplication-square150x150logo" content="./icons/icon-144x144.png">
+    <meta name="msapplication-square310x310logo" content="./icons/icon-512x512.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+    <!-- Styles -->
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/enhanced-styles.css" rel="stylesheet"/>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Calculadoras de Saúde",
+            "description": "Ferramentas profissionais para cálculos de saúde, nutrição, fitness e bem-estar",
+            "url": "",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+</head>
+    <link rel="manifest" href="/manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('Service Worker registrado com sucesso:', registration);
+            })
+            .catch(error => {
+              console.log('Falha ao registrar o Service Worker:', error);
+            });
+        });
+      }
+    </script>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <i class="fas fa-calculator nav__icon"></i>
+                <span class="nav__title">Calcule Sua Saúde</span>
+            </div>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link active" href="#home">Início</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#categorias">Calculadoras</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#sobre">Sobre</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#footer">Contato</a></li>
+                </ul>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Calculadoras Profissionais de 
+                        <span class="hero__highlight">Saúde &amp; Fitness</span>
+                    </h1>
+                    <p class="hero__description">
+                        Ferramentas precisas e confiáveis para monitorar sua saúde, 
+                        planejar sua nutrição e otimizar seus treinos. Tudo em um só lugar.
+                    </p>
+                    <div class="hero__buttons">
+                        <a class="btn btn--primary" href="#categorias">
+                            <i class="fas fa-calculator"></i>
+                            Começar Agora
+                        </a>
+                        <a class="btn btn--secondary" href="#sobre">
+                            <i class="fas fa-info-circle"></i>
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <i class="fas fa-heart stat__icon"></i>
+                            <span class="stat__number">25+</span>
+                            <span class="stat__label">Calculadoras</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-users stat__icon"></i>
+                            <span class="stat__number">100%</span>
+                            <span class="stat__label">Gratuito</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-shield-alt stat__icon"></i>
+                            <span class="stat__number">Seguro</span>
+                            <span class="stat__label">&amp; Privado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories" id="categorias">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Categorias de Calculadoras</h2>
+                    <p class="section__description">Escolha a categoria que melhor atende às suas necessidades</p>
+                </div>
+                <div class="categories__grid">
+                    <!-- Category Cards -->
+                    <div class="category-card" data-category="corporais">
+                        <div class="category-card__icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="category-card__title">Corporais e de Saúde</h3>
+                        <p class="category-card__description">IMC, TMB, gordura corporal, peso ideal e muito mais</p>
+                        <div class="category-card__count">8 calculadoras</div>
+                        <button class="category-card__btn" onclick="openCategory('corporais')">
+                            <i class="fas fa-arrow-right"></i> Acessar
+                        </button>
+                    </div>
+
+                    <div class="category-card" data-category="nutricionais">
+                        <div class="category-card__icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="category-card__title">Nutricionais</h3>
+                        <p class="category-card__description">Calorias, macronutrientes, hidratação e fibras</p>
+                        <div class="category-card__count">8 calculadoras</div>
+                        <button class="category-card__btn" onclick="openCategory('nutricionais')">
+                            <i class="fas fa-arrow-right"></i> Acessar
+                        </button>
+                    </div>
+
+                    <div class="category-card" data-category="fitness">
+                        <div class="category-card__icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 class="category-card__title">Fitness</h3>
+                        <p class="category-card__description">1RM, VO2 máximo, frequência cardíaca e recuperação</p>
+                        <div class="category-card__count">6 calculadoras</div>
+                        <button class="category-card__btn" onclick="openCategory('fitness')">
+                            <i class="fas fa-arrow-right"></i> Acessar
+                        </button>
+                    </div>
+
+                    <div class="category-card" data-category="especificas">
+                        <div class="category-card__icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3 class="category-card__title">Específicas</h3>
+                        <p class="category-card__description">Gestacional, ovulação, infantil e faixa etária</p>
+                        <div class="category-card__count">4 calculadoras</div>
+                        <button class="category-card__btn" onclick="openCategory('especificas')">
+                            <i class="fas fa-arrow-right"></i> Acessar
+                        </button>
+                    </div>
+
+                    <div class="category-card" data-category="bem-estar">
+                        <div class="category-card__icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="category-card__title">Bem-estar</h3>
+                        <p class="category-card__description">Sono, estresse, sedentarismo e cafeína</p>
+                        <div class="category-card__count">4 calculadoras</div>
+                        <button class="category-card__btn" onclick="openCategory('bem-estar')">
+                            <i class="fas fa-arrow-right"></i> Acessar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="sobre">
+            <div class="container">
+                <div class="about__content">
+                    <div class="about__text">
+                        <h2 class="section__title">Sobre Nossas Calculadoras</h2>
+                        <p class="about__description">
+                            Desenvolvemos ferramentas precisas e confiáveis baseadas em 
+                            fórmulas científicas reconhecidas mundialmente. Todas as 
+                            calculadoras são gratuitas e não armazenam seus dados pessoais.
+                        </p>
+
+                        <div class="features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle feature__icon"></i>
+                                <div class="feature__content">
+                                    <h4 class="feature__title">Precisão Científica</h4>
+                                    <p class="feature__text">Baseadas em fórmulas validadas cientificamente</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-shield-alt feature__icon"></i>
+                                <div class="feature__content">
+                                    <h4 class="feature__title">Privacidade Total</h4>
+                                    <p class="feature__text">Seus dados não são armazenados ou compartilhados</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt feature__icon"></i>
+                                <div class="feature__content">
+                                    <h4 class="feature__title">Responsivo</h4>
+                                    <p class="feature__text">Funciona perfeitamente em todos os dispositivos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="alert-box">
+            <p><strong>⚠️ Aviso Importante:</strong> Esta calculadora oferece apenas uma estimativa com base em fórmulas científicas. Os resultados podem conter imprecisões, especialmente em casos atípicos ou quando os dados informados não são totalmente precisos. Por isso, utilize esta ferramenta apenas como referência e consulte sempre um profissional qualificado para uma avaliação completa e segura.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__main">
+                <!-- Brand Section -->
+                <div class="footer__section footer__brand-section">
+                    <div class="footer__brand">
+                        <i class="fas fa-calculator footer__icon"></i>
+                        <span class="footer__title">Calcule Sua Saúde</span>
+                    </div>
+                    <p class="footer__description">
+                        Ferramentas precisas e confiáveis para monitorar sua saúde, 
+                        planejar sua nutrição e otimizar seus treinos.
+                    </p>
+                    <div class="footer__contact">
+                        <div class="footer__email">
+                            <i class="fas fa-envelope"></i>
+                            <span>contatocalculesuasaude@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer__section">
+                    <h4 class="footer__section-title">Navegação</h4>
+                    <ul class="footer__links">
+                        <li><a class="footer__link" href="#home">Início</a></li>
+                        <li><a class="footer__link" href="#categorias">Calculadoras</a></li>
+                        <li><a class="footer__link" href="#sobre">Sobre</a></li>
+                        <li><a class="footer__link" href="/politica-de-privacidade.html" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer__section">
+                    <h4 class="footer__section-title">Categorias</h4>
+                    <ul class="footer__links">
+                        <li><a class="footer__link" href="#categorias">Corporais e Saúde</a></li>
+                        <li><a class="footer__link" href="#categorias">Nutricionais</a></li>
+                        <li><a class="footer__link" href="#categorias">Fitness</a></li>
+                        <li><a class="footer__link" href="#categorias">Específicas</a></li>
+                        <li><a class="footer__link" href="#categorias">Bem-estar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer__section">
+                    <h4 class="footer__section-title">Redes Sociais</h4>
+                    <div class="footer__social">
+                        <a class="footer__social-link" href="https://www.instagram.com/thiagoevanio_?igsh=MTJhYTFyaXZjaTR2ZA==" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a class="footer__social-link" href="https://t.me/+4toF87InmzIyYmMx" aria-label="Telegram">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram</span>
+                        </a>
+                        <a class="footer__social-link" href="https://www.tiktok.com/@casoscomdetetive?_t=ZM-8yFUIOs8M5A&_r=1" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <p class="footer__copy">
+                        © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                    </p>
+                    <p class="footer__disclaimer">
+                        As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/pwa-utils.js"></script>
+</body>
+</html>
+

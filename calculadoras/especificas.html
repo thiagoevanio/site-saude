@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras específicas: gestacional, ovulação, fertilidade, IMC infantil e necessidades calóricas por faixa etária. Ferramentas especializadas.">
+    <meta name="keywords" content="gestacional, ovulação, fertilidade, IMC infantil, calorias crianças, calorias idosos">
+    <title>Calculadoras Específicas - Ferramentas Profissionais</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+   </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadoras.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-calculator nav__icon"></i>
+                    <span class="nav__title">Calcule Sua Saúde</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#calculadoras" class="nav__link active">Calculadoras</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__breadcrumb">
+                        <a href="../index.html">Início</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Calculadoras Específicas</span>
+                    </div>
+                    <h1 class="page-header__title">
+                        <i class="fas fa-baby"></i>
+                        Calculadoras Específicas
+                    </h1>
+                    <p class="page-header__description">
+                        Ferramentas especializadas para gestação, fertilidade e necessidades específicas por idade
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Navigation -->
+        <section class="calculator-nav">
+            <div class="container">
+                <div class="calculator-nav__tabs">
+                    <button class="tab-btn active" data-calculator="gestacional">
+                        <i class="fas fa-baby"></i>
+                        Gestacional
+                    </button>
+                    <button class="tab-btn" data-calculator="ovulacao">
+                        <i class="fas fa-calendar-alt"></i>
+                        Ovulação
+                    </button>
+                    <button class="tab-btn" data-calculator="imc-infantil">
+                        <i class="fas fa-child"></i>
+                        IMC Infantil
+                    </button>
+                    <button class="tab-btn" data-calculator="calorias-faixa-etaria">
+                        <i class="fas fa-users"></i>
+                        Calorias por Idade
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators -->
+        <section class="calculators" id="calculadoras">
+            <div class="container">
+                <!-- Gestacional Calculator -->
+                <div class="calculator active" id="gestacional">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora Gestacional</h2>
+                        <p class="calculator__description">
+                            Calcula semanas de gestação, data provável do parto e marcos importantes da gravidez.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="gestacional-form">
+                            <div class="form-group">
+                                <label for="gest-metodo">Método de Cálculo</label>
+                                <select id="gest-metodo" required>
+                                    <option value="">Selecione o método</option>
+                                    <option value="dum">Data da Última Menstruação (DUM)</option>
+                                    <option value="concepcao">Data da Concepção</option>
+                                    <option value="semanas">Semanas de Gestação Atual</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="gest-dum-group" style="display: none;">
+                                <label for="gest-dum">Data da Última Menstruação</label>
+                                <input type="date" id="gest-dum">
+                            </div>
+                            
+                            <div class="form-group" id="gest-concepcao-group" style="display: none;">
+                                <label for="gest-concepcao">Data da Concepção</label>
+                                <input type="date" id="gest-concepcao">
+                            </div>
+                            
+                            <div class="form-row" id="gest-semanas-group" style="display: none;">
+                                <div class="form-group">
+                                    <label for="gest-semanas">Semanas</label>
+                                    <input type="number" id="gest-semanas" min="1" max="42">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gest-dias">Dias</label>
+                                    <input type="number" id="gest-dias" min="0" max="6" value="0">
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-baby"></i>
+                                Calcular Gestação
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="gestacional-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Semanas de Gestação</h3>
+                                    <div class="result__value" id="gest-semanas-atual">--</div>
+                                    <div class="result__unit">semanas</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Data Provável do Parto</h3>
+                                    <div class="result__value" id="gest-dpp">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Trimestre</h3>
+                                    <div class="result__value" id="gest-trimestre">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Marcos da Gestação</h4>
+                                <div class="gest-marcos" id="gest-marcos">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('gestacional')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ovulação/Fertilidade Calculator -->
+                <div class="calculator" id="ovulacao">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Ovulação e Fertilidade</h2>
+                        <p class="calculator__description">
+                            Calcula período fértil, data da ovulação e melhores dias para concepção baseado no ciclo menstrual.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="ovulacao-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ov-dum">Data da Última Menstruação</label>
+                                    <input type="date" id="ov-dum" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ov-ciclo">Duração do Ciclo (dias)</label>
+                                    <input type="number" id="ov-ciclo" min="21" max="35" value="28" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ov-fase-lutea">Fase Lútea (dias)</label>
+                                    <input type="number" id="ov-fase-lutea" min="10" max="16" value="14">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ov-objetivo">Objetivo</label>
+                                    <select id="ov-objetivo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="engravidar">Engravidar</option>
+                                        <option value="evitar">Evitar gravidez (método natural)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-calendar-alt"></i>
+                                Calcular Ovulação
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="ovulacao-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Data da Ovulação</h3>
+                                    <div class="result__value" id="ov-data-ovulacao">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Período Fértil</h3>
+                                    <div class="result__value" id="ov-periodo-fertil">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Próxima Menstruação</h3>
+                                    <div class="result__value" id="ov-proxima-menstruacao">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Calendário de Fertilidade</h4>
+                                <div class="ov-calendario" id="ov-calendario">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="ov-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('ovulacao')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMC Infantil Calculator -->
+                <div class="calculator" id="imc-infantil">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de IMC Infantil</h2>
+                        <p class="calculator__description">
+                            Calcula o IMC para crianças e adolescentes (2-19 anos) usando percentis específicos para idade e sexo.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="imc-infantil-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="imc-inf-peso">Peso (kg)</label>
+                                    <input type="number" id="imc-inf-peso" step="0.1" min="5" max="150" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="imc-inf-altura">Altura (cm)</label>
+                                    <input type="number" id="imc-inf-altura" step="0.1" min="50" max="200" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="imc-inf-idade">Idade</label>
+                                    <input type="number" id="imc-inf-idade" min="2" max="19" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="imc-inf-sexo">Sexo</label>
+                                    <select id="imc-inf-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-child"></i>
+                                Calcular IMC Infantil
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="imc-infantil-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">IMC</h3>
+                                    <div class="result__value" id="imc-inf-valor">--</div>
+                                    <div class="result__unit">kg/m²</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Percentil</h3>
+                                    <div class="result__value" id="imc-inf-percentil">--</div>
+                                    <div class="result__unit">%</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Classificação</h3>
+                                    <div class="result__value" id="imc-inf-classificacao">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Interpretação do IMC Infantil</h4>
+                                <div class="imc-inf-interpretacao">
+                                    <div class="imc-inf-item">
+                                        <span class="imc-inf-range">Percentil < 5</span>
+                                        <span class="imc-inf-class underweight">Abaixo do peso</span>
+                                    </div>
+                                    <div class="imc-inf-item">
+                                        <span class="imc-inf-range">Percentil 5-84</span>
+                                        <span class="imc-inf-class normal">Peso normal</span>
+                                    </div>
+                                    <div class="imc-inf-item">
+                                        <span class="imc-inf-range">Percentil 85-94</span>
+                                        <span class="imc-inf-class overweight">Sobrepeso</span>
+                                    </div>
+                                    <div class="imc-inf-item">
+                                        <span class="imc-inf-range">Percentil ≥ 95</span>
+                                        <span class="imc-inf-class obese">Obesidade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('imc-infantil')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calorias por Faixa Etária Calculator -->
+                <div class="calculator" id="calorias-faixa-etaria">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Necessidades Calóricas por Faixa Etária</h2>
+                        <p class="calculator__description">
+                            Calcula necessidades calóricas específicas para crianças, adolescentes, adultos e idosos.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="calorias-faixa-etaria-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cal-idade">Idade (anos)</label>
+                                    <input type="number" id="cal-idade" min="1" max="100" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cal-sexo">Sexo</label>
+                                    <select id="cal-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cal-peso">Peso (kg)</label>
+                                    <input type="number" id="cal-peso" step="0.1" min="3" max="200" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cal-altura">Altura (cm)</label>
+                                    <input type="number" id="cal-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cal-atividade">Nível de Atividade</label>
+                                <select id="cal-atividade" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+                                    <option value="1.375">Levemente ativo (exercício leve 1-3 dias/semana)</option>
+                                    <option value="1.55">Moderadamente ativo (exercício moderado 3-5 dias/semana)</option>
+                                    <option value="1.725">Muito ativo (exercício intenso 6-7 dias/semana)</option>
+                                    <option value="1.9">Extremamente ativo (exercício muito intenso)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="cal-condicoes-group">
+                                <label for="cal-condicoes">Condições Especiais</label>
+                                <select id="cal-condicoes">
+                                    <option value="">Nenhuma</option>
+                                    <option value="crescimento">Fase de crescimento acelerado</option>
+                                    <option value="lactacao">Lactação</option>
+                                    <option value="gestacao">Gestação</option>
+                                    <option value="recuperacao">Recuperação de doença</option>
+                                    <option value="idoso-fragil">Idoso frágil</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-users"></i>
+                                Calcular Necessidades
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="calorias-faixa-etaria-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Calorias Diárias</h3>
+                                    <div class="result__value" id="cal-calorias-total">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">TMB</h3>
+                                    <div class="result__value" id="cal-tmb">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Faixa Etária</h3>
+                                    <div class="result__value" id="cal-faixa">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Recomendações Nutricionais</h4>
+                                <div class="cal-recomendacoes" id="cal-recomendacoes">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('calorias-faixa-etaria')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <i class="fas fa-calculator footer__icon"></i>
+                    <span class="footer__title">Calcule Sua Saúde</span>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Início</a>
+                    <a href="#calculadoras" class="footer__link">Calculadoras</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                </p>
+                <p class="footer__disclaimer">
+                    As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/especificas.js"></script>
+</body>
+</html>

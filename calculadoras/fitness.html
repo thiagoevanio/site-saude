@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras fitness: 1RM, IMC atlético, VO2 máximo, frequência cardíaca, recuperação muscular e consumo calórico. Ferramentas precisas para atletas.">
+    <meta name="keywords" content="1RM, IMC atlético, VO2 máximo, frequência cardíaca, recuperação muscular, fitness, treino">
+    <title>Calculadoras Fitness - Ferramentas Profissionais</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadoras.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-calculator nav__icon"></i>
+                    <span class="nav__title">Calcule Sua Saúde</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#calculadoras" class="nav__link active">Calculadoras</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__breadcrumb">
+                        <a href="../index.html">Início</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Calculadoras Fitness</span>
+                    </div>
+                    <h1 class="page-header__title">
+                        <i class="fas fa-dumbbell"></i>
+                        Calculadoras Fitness
+                    </h1>
+                    <p class="page-header__description">
+                        Ferramentas especializadas para otimizar seus treinos e performance atlética
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Navigation -->
+        <section class="calculator-nav">
+            <div class="container">
+                <div class="calculator-nav__tabs">
+                    <button class="tab-btn active" data-calculator="1rm">
+                        <i class="fas fa-weight-hanging"></i>
+                        1RM
+                    </button>
+                    <button class="tab-btn" data-calculator="imc-atletico">
+                        <i class="fas fa-medal"></i>
+                        IMC Atlético
+                    </button>
+                    <button class="tab-btn" data-calculator="consumo-calorico">
+                        <i class="fas fa-fire"></i>
+                        Consumo Calórico
+                    </button>
+                    <button class="tab-btn" data-calculator="vo2-maximo">
+                        <i class="fas fa-lungs"></i>
+                        VO2 Máximo
+                    </button>
+                    <button class="tab-btn" data-calculator="recuperacao">
+                        <i class="fas fa-clock"></i>
+                        Recuperação
+                    </button>
+                    <button class="tab-btn" data-calculator="frequencia-cardiaca">
+                        <i class="fas fa-heartbeat"></i>
+                        FC Treino
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators -->
+        <section class="calculators" id="calculadoras">
+            <div class="container">
+                <!-- 1RM Calculator -->
+                <div class="calculator active" id="1rm">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de 1RM (Uma Repetição Máxima)</h2>
+                        <p class="calculator__description">
+                            Calcula sua carga máxima para uma repetição baseada no peso e repetições que você consegue executar.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="1rm-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rm-peso">Peso Levantado (kg)</label>
+                                    <input type="number" id="rm-peso" step="0.5" min="1" max="500" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rm-repeticoes">Repetições Executadas</label>
+                                    <input type="number" id="rm-repeticoes" min="1" max="20" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rm-formula">Fórmula de Cálculo</label>
+                                <select id="rm-formula" required>
+                                    <option value="">Selecione a fórmula</option>
+                                    <option value="epley">Epley (mais precisa para 1-10 reps)</option>
+                                    <option value="brzycki">Brzycki (boa para 2-10 reps)</option>
+                                    <option value="lander">Lander (conservadora)</option>
+                                    <option value="oconner">O'Conner (para altas repetições)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-weight-hanging"></i>
+                                Calcular 1RM
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="1rm-result">
+                            <div class="result__card highlight">
+                                <h3 class="result__title">1RM Estimado</h3>
+                                <div class="result__value" id="rm-valor">--</div>
+                                <div class="result__unit">kg</div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Percentuais de Treino</h4>
+                                <div class="rm-percentages" id="rm-percentages">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('1rm')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMC Atlético Calculator -->
+                <div class="calculator" id="imc-atletico">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de IMC Atlético</h2>
+                        <p class="calculator__description">
+                            IMC ajustado para atletas e fisiculturistas, considerando maior massa muscular e menor percentual de gordura.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="imc-atletico-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="imc-at-peso">Peso (kg)</label>
+                                    <input type="number" id="imc-at-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="imc-at-altura">Altura (cm)</label>
+                                    <input type="number" id="imc-at-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="imc-at-sexo">Sexo</label>
+                                    <select id="imc-at-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="imc-at-gordura">Gordura Corporal (%)</label>
+                                    <input type="number" id="imc-at-gordura" step="0.1" min="3" max="40" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="imc-at-nivel">Nível Atlético</label>
+                                <select id="imc-at-nivel" required>
+                                    <option value="">Selecione</option>
+                                    <option value="recreativo">Recreativo</option>
+                                    <option value="amador">Amador Competitivo</option>
+                                    <option value="semi-profissional">Semi-Profissional</option>
+                                    <option value="profissional">Profissional/Elite</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-medal"></i>
+                                Calcular IMC Atlético
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="imc-atletico-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">IMC Tradicional</h3>
+                                    <div class="result__value" id="imc-at-tradicional">--</div>
+                                    <div class="result__classification" id="imc-at-trad-class">--</div>
+                                </div>
+                                
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">IMC Atlético</h3>
+                                    <div class="result__value" id="imc-at-atletico">--</div>
+                                    <div class="result__classification" id="imc-at-atl-class">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="imc-at-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('imc-atletico')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumo Calórico por Exercício Calculator -->
+                <div class="calculator" id="consumo-calorico">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Consumo Calórico por Exercício</h2>
+                        <p class="calculator__description">
+                            Calcula o gasto calórico específico para corrida, caminhada e outros exercícios baseado em velocidade e inclinação.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="consumo-calorico-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="cc-peso">Peso (kg)</label>
+                                    <input type="number" id="cc-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cc-duracao">Duração (minutos)</label>
+                                    <input type="number" id="cc-duracao" min="1" max="480" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cc-exercicio">Tipo de Exercício</label>
+                                <select id="cc-exercicio" required>
+                                    <option value="">Selecione o exercício</option>
+                                    <option value="caminhada">Caminhada</option>
+                                    <option value="corrida">Corrida</option>
+                                    <option value="ciclismo">Ciclismo</option>
+                                    <option value="natacao">Natação</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="cc-velocidade-group" style="display: none;">
+                                <label for="cc-velocidade">Velocidade (km/h)</label>
+                                <input type="number" id="cc-velocidade" step="0.1" min="1" max="50">
+                            </div>
+                            
+                            <div class="form-group" id="cc-inclinacao-group" style="display: none;">
+                                <label for="cc-inclinacao">Inclinação (%)</label>
+                                <input type="number" id="cc-inclinacao" step="0.1" min="0" max="30" value="0">
+                            </div>
+                            
+                            <div class="form-group" id="cc-intensidade-group" style="display: none;">
+                                <label for="cc-intensidade">Intensidade</label>
+                                <select id="cc-intensidade">
+                                    <option value="">Selecione</option>
+                                    <option value="leve">Leve</option>
+                                    <option value="moderada">Moderada</option>
+                                    <option value="intensa">Intensa</option>
+                                    <option value="muito-intensa">Muito Intensa</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-fire"></i>
+                                Calcular Consumo
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="consumo-calorico-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Calorias Queimadas</h3>
+                                    <div class="result__value" id="cc-calorias">--</div>
+                                    <div class="result__unit">kcal</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Por Minuto</h3>
+                                    <div class="result__value" id="cc-por-minuto">--</div>
+                                    <div class="result__unit">kcal/min</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">MET</h3>
+                                    <div class="result__value" id="cc-met">--</div>
+                                    <div class="result__unit">valor</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('consumo-calorico')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VO2 Máximo Calculator -->
+                <div class="calculator" id="vo2-maximo">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de VO2 Máximo</h2>
+                        <p class="calculator__description">
+                            Estima sua capacidade cardiorrespiratória máxima usando diferentes métodos de teste.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="vo2-maximo-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vo2-idade">Idade (anos)</label>
+                                    <input type="number" id="vo2-idade" min="15" max="80" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="vo2-sexo">Sexo</label>
+                                    <select id="vo2-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vo2-metodo">Método de Teste</label>
+                                <select id="vo2-metodo" required>
+                                    <option value="">Selecione o método</option>
+                                    <option value="cooper">Teste de Cooper (12 minutos)</option>
+                                    <option value="rockport">Teste de Rockport (1 milha caminhando)</option>
+                                    <option value="step">Teste de Step (3 minutos)</option>
+                                    <option value="estimativa">Estimativa por idade e condicionamento</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="vo2-distancia-group" style="display: none;">
+                                <label for="vo2-distancia">Distância Percorrida (metros)</label>
+                                <input type="number" id="vo2-distancia" min="1000" max="4000">
+                            </div>
+                            
+                            <div class="form-row" id="vo2-rockport-group" style="display: none;">
+                                <div class="form-group">
+                                    <label for="vo2-tempo">Tempo (minutos)</label>
+                                    <input type="number" id="vo2-tempo" step="0.1" min="8" max="25">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="vo2-fc-final">FC Final (bpm)</label>
+                                    <input type="number" id="vo2-fc-final" min="80" max="200">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="vo2-step-group" style="display: none;">
+                                <label for="vo2-fc-recuperacao">FC 1 min após step (bpm)</label>
+                                <input type="number" id="vo2-fc-recuperacao" min="60" max="180">
+                            </div>
+                            
+                            <div class="form-group" id="vo2-condicionamento-group" style="display: none;">
+                                <label for="vo2-condicionamento">Nível de Condicionamento</label>
+                                <select id="vo2-condicionamento">
+                                    <option value="">Selecione</option>
+                                    <option value="sedentario">Sedentário</option>
+                                    <option value="ativo">Ativo Recreativo</option>
+                                    <option value="treinado">Bem Treinado</option>
+                                    <option value="atleta">Atleta</option>
+                                    <option value="elite">Elite</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-lungs"></i>
+                                Calcular VO2 Máximo
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="vo2-maximo-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">VO2 Máximo</h3>
+                                    <div class="result__value" id="vo2-valor">--</div>
+                                    <div class="result__unit">ml/kg/min</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Classificação</h3>
+                                    <div class="result__value" id="vo2-classificacao">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__interpretation" id="vo2-interpretacao">
+                                <p>--</p>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('vo2-maximo')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recuperação Muscular Calculator -->
+                <div class="calculator" id="recuperacao">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Tempo de Recuperação Muscular</h2>
+                        <p class="calculator__description">
+                            Calcula o tempo ideal de recuperação entre treinos baseado na intensidade, volume e grupo muscular.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="recuperacao-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rec-grupo-muscular">Grupo Muscular</label>
+                                    <select id="rec-grupo-muscular" required>
+                                        <option value="">Selecione</option>
+                                        <option value="peito">Peito</option>
+                                        <option value="costas">Costas</option>
+                                        <option value="ombros">Ombros</option>
+                                        <option value="biceps">Bíceps</option>
+                                        <option value="triceps">Tríceps</option>
+                                        <option value="quadriceps">Quadríceps</option>
+                                        <option value="posteriores">Posteriores de coxa</option>
+                                        <option value="gluteos">Glúteos</option>
+                                        <option value="panturrilhas">Panturrilhas</option>
+                                        <option value="abdomen">Abdômen</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rec-intensidade">Intensidade do Treino</label>
+                                    <select id="rec-intensidade" required>
+                                        <option value="">Selecione</option>
+                                        <option value="leve">Leve (50-65% 1RM)</option>
+                                        <option value="moderada">Moderada (65-80% 1RM)</option>
+                                        <option value="alta">Alta (80-90% 1RM)</option>
+                                        <option value="maxima">Máxima (90-100% 1RM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rec-volume">Volume de Treino</label>
+                                    <select id="rec-volume" required>
+                                        <option value="">Selecione</option>
+                                        <option value="baixo">Baixo (1-8 séries)</option>
+                                        <option value="moderado">Moderado (9-16 séries)</option>
+                                        <option value="alto">Alto (17-24 séries)</option>
+                                        <option value="muito-alto">Muito Alto (25+ séries)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rec-experiencia">Experiência de Treino</label>
+                                    <select id="rec-experiencia" required>
+                                        <option value="">Selecione</option>
+                                        <option value="iniciante">Iniciante (0-1 ano)</option>
+                                        <option value="intermediario">Intermediário (1-3 anos)</option>
+                                        <option value="avancado">Avançado (3+ anos)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="rec-idade">Idade (anos)</label>
+                                    <input type="number" id="rec-idade" min="15" max="80" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rec-sono">Qualidade do Sono</label>
+                                    <select id="rec-sono" required>
+                                        <option value="">Selecione</option>
+                                        <option value="ruim">Ruim (< 6h ou má qualidade)</option>
+                                        <option value="regular">Regular (6-7h)</option>
+                                        <option value="boa">Boa (7-8h)</option>
+                                        <option value="excelente">Excelente (8+ h de qualidade)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-clock"></i>
+                                Calcular Recuperação
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="recuperacao-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Tempo de Recuperação</h3>
+                                    <div class="result__value" id="rec-tempo">--</div>
+                                    <div class="result__unit">horas</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Próximo Treino</h3>
+                                    <div class="result__value" id="rec-proximo">--</div>
+                                    <div class="result__unit">dias</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Dicas para Acelerar a Recuperação</h4>
+                                <div class="rec-dicas" id="rec-dicas">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('recuperacao')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frequência Cardíaca Calculator -->
+                <div class="calculator" id="frequencia-cardiaca">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Frequência Cardíaca Ideal para Treino</h2>
+                        <p class="calculator__description">
+                            Calcula suas zonas de frequência cardíaca para diferentes objetivos de treino.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="frequencia-cardiaca-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fc-idade">Idade (anos)</label>
+                                    <input type="number" id="fc-idade" min="15" max="80" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="fc-repouso">FC de Repouso (bpm)</label>
+                                    <input type="number" id="fc-repouso" min="40" max="100" placeholder="Opcional">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fc-metodo">Método de Cálculo</label>
+                                <select id="fc-metodo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="karvonen">Karvonen (mais preciso - requer FC repouso)</option>
+                                    <option value="simples">Fórmula Simples (220 - idade)</option>
+                                    <option value="tanaka">Tanaka (208 - 0.7 × idade)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-heartbeat"></i>
+                                Calcular Zonas FC
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="frequencia-cardiaca-result">
+                            <div class="result__summary">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">FC Máxima</h3>
+                                    <div class="result__value" id="fc-maxima">--</div>
+                                    <div class="result__unit">bpm</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Zonas de Treinamento</h4>
+                                <div class="fc-zones" id="fc-zones">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('frequencia-cardiaca')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <i class="fas fa-calculator footer__icon"></i>
+                    <span class="footer__title">Calcule Sua Saúde</span>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Início</a>
+                    <a href="#calculadoras" class="footer__link">Calculadoras</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                </p>
+                <p class="footer__disclaimer">
+                    As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/fitness.js"></script>
+</body>
+</html>

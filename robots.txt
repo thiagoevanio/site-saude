@@ -1,0 +1,6 @@
+# robots.txt para o site Calculadoras
+
+User-agent: *
+Disallow:
+
+Sitemap: https://calculesuasaude.com.br/sitemap.xml

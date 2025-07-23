@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras nutricionais: calorias diárias, proteínas, carboidratos, macronutrientes, gasto calórico, hidratação e fibras. Ferramentas precisas e gratuitas.">
+    <meta name="keywords" content="calorias, proteínas, carboidratos, macronutrientes, hidratação, fibras, índice glicêmico, nutrição">
+    <title>Calculadoras Nutricionais - Ferramentas Profissionais</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825554897787593"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KLV6YL1TM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6KLV6YL1TM');
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/calculadoras.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-calculator nav__icon"></i>
+                    <span class="nav__title">Calcule Sua Saúde</span>
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Início</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#calculadoras" class="nav__link active">Calculadoras</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header__content">
+                    <div class="page-header__breadcrumb">
+                        <a href="../index.html">Início</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Calculadoras Nutricionais</span>
+                    </div>
+                    <h1 class="page-header__title">
+                        <i class="fas fa-utensils"></i>
+                        Calculadoras Nutricionais
+                    </h1>
+                    <p class="page-header__description">
+                        Ferramentas precisas para planejar sua alimentação e otimizar sua nutrição
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Navigation -->
+        <section class="calculator-nav">
+            <div class="container">
+                <div class="calculator-nav__tabs">
+                    <button class="tab-btn active" data-calculator="calorias">
+                        <i class="fas fa-fire"></i>
+                        Calorias
+                    </button>
+                    <button class="tab-btn" data-calculator="proteinas">
+                        <i class="fas fa-drumstick-bite"></i>
+                        Proteínas
+                    </button>
+                    <button class="tab-btn" data-calculator="carboidratos">
+                        <i class="fas fa-bread-slice"></i>
+                        Carboidratos
+                    </button>
+                    <button class="tab-btn" data-calculator="macronutrientes">
+                        <i class="fas fa-chart-pie"></i>
+                        Macros
+                    </button>
+                    <button class="tab-btn" data-calculator="gasto-calorico">
+                        <i class="fas fa-running"></i>
+                        Gasto Calórico
+                    </button>
+                    <button class="tab-btn" data-calculator="agua">
+                        <i class="fas fa-tint"></i>
+                        Água
+                    </button>
+                    <button class="tab-btn" data-calculator="indice-glicemico">
+                        <i class="fas fa-chart-line"></i>
+                        Índice Glicêmico
+                    </button>
+                    <button class="tab-btn" data-calculator="fibras">
+                        <i class="fas fa-leaf"></i>
+                        Fibras
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculators -->
+        <section class="calculators" id="calculadoras">
+            <div class="container">
+                <!-- Necessidade de Calorias Calculator -->
+                <div class="calculator active" id="calorias">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Necessidade Diária de Calorias</h2>
+                        <p class="calculator__description">
+                            Calcula quantas calorias você precisa consumir diariamente para manter, perder ou ganhar peso.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="calorias-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="calorias-peso">Peso (kg)</label>
+                                    <input type="number" id="calorias-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="calorias-altura">Altura (cm)</label>
+                                    <input type="number" id="calorias-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="calorias-idade">Idade (anos)</label>
+                                    <input type="number" id="calorias-idade" min="1" max="120" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="calorias-sexo">Sexo</label>
+                                    <select id="calorias-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="calorias-atividade">Nível de Atividade</label>
+                                    <select id="calorias-atividade" required>
+                                        <option value="">Selecione seu nível de atividade</option>
+                                        <option value="1.2">Sedentário (pouco ou nenhum exercício)</option>
+                                        <option value="1.375">Levemente ativo (exercício leve 1-3 dias/semana)</option>
+                                        <option value="1.55">Moderadamente ativo (exercício moderado 3-5 dias/semana)</option>
+                                        <option value="1.725">Muito ativo (exercício intenso 6-7 dias/semana)</option>
+                                        <option value="1.9">Extremamente ativo (exercício muito intenso, trabalho físico)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="calorias-objetivo">Objetivo</label>
+                                    <select id="calorias-objetivo" required>
+                                        <option value="">Selecione seu objetivo</option>
+                                        <option value="perder">Perder peso (-500 kcal/dia)</option>
+                                        <option value="manter">Manter peso</option>
+                                        <option value="ganhar">Ganhar peso (+500 kcal/dia)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-fire"></i>
+                                Calcular Calorias
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="calorias-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">TMB</h3>
+                                    <div class="result__value" id="calorias-tmb">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Manutenção</h3>
+                                    <div class="result__value" id="calorias-manutencao">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                                
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Objetivo</h3>
+                                    <div class="result__value" id="calorias-objetivo-valor">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('calorias')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proteínas Calculator -->
+                <div class="calculator" id="proteinas">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Necessidade Diária de Proteínas</h2>
+                        <p class="calculator__description">
+                            Calcula a quantidade ideal de proteínas que você deve consumir diariamente baseado em seu peso e atividade física.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="proteinas-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="proteinas-peso">Peso (kg)</label>
+                                    <input type="number" id="proteinas-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="proteinas-atividade">Nível de Atividade</label>
+                                    <select id="proteinas-atividade" required>
+                                        <option value="">Selecione</option>
+                                        <option value="0.8">Sedentário</option>
+                                        <option value="1.2">Atividade leve</option>
+                                        <option value="1.6">Atividade moderada</option>
+                                        <option value="2.0">Atividade intensa</option>
+                                        <option value="2.4">Atleta/Fisiculturista</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="proteinas-objetivo">Objetivo</label>
+                                <select id="proteinas-objetivo" required>
+                                    <option value="">Selecione seu objetivo</option>
+                                    <option value="manutencao">Manutenção muscular</option>
+                                    <option value="ganho">Ganho de massa muscular</option>
+                                    <option value="perda">Perda de peso (preservar músculo)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-drumstick-bite"></i>
+                                Calcular Proteínas
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="proteinas-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Proteínas Diárias</h3>
+                                    <div class="result__value" id="proteinas-gramas">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Por Refeição</h3>
+                                    <div class="result__value" id="proteinas-refeicao">--</div>
+                                    <div class="result__unit">g (5 refeições)</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Calorias</h3>
+                                    <div class="result__value" id="proteinas-calorias">--</div>
+                                    <div class="result__unit">kcal</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('proteinas')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carboidratos e Gorduras Calculator -->
+                <div class="calculator" id="carboidratos">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Carboidratos e Gorduras</h2>
+                        <p class="calculator__description">
+                            Calcula a necessidade diária de carboidratos e gorduras baseada em suas calorias totais e proteínas.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="carboidratos-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="carboidratos-calorias">Calorias Totais (kcal/dia)</label>
+                                    <input type="number" id="carboidratos-calorias" min="800" max="5000" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="carboidratos-proteinas">Proteínas (g/dia)</label>
+                                    <input type="number" id="carboidratos-proteinas" min="20" max="300" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="carboidratos-distribuicao">Distribuição Carboidratos/Gorduras</label>
+                                <select id="carboidratos-distribuicao" required>
+                                    <option value="">Selecione</option>
+                                    <option value="balanced">Balanceada (45% carbo, 30% gordura)</option>
+                                    <option value="low-carb">Low Carb (25% carbo, 50% gordura)</option>
+                                    <option value="high-carb">High Carb (60% carbo, 15% gordura)</option>
+                                    <option value="keto">Cetogênica (5% carbo, 70% gordura)</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-bread-slice"></i>
+                                Calcular Macros
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="carboidratos-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Carboidratos</h3>
+                                    <div class="result__value" id="carboidratos-gramas">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="carboidratos-percent">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Gorduras</h3>
+                                    <div class="result__value" id="gorduras-gramas">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="gorduras-percent">--</div>
+                                </div>
+                                
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Proteínas</h3>
+                                    <div class="result__value" id="carboidratos-proteinas-valor">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="proteinas-percent">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('carboidratos')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Macronutrientes Calculator -->
+                <div class="calculator" id="macronutrientes">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Macronutrientes Completa</h2>
+                        <p class="calculator__description">
+                            Calcula a distribuição completa de macronutrientes em gramas e percentuais baseada em seus dados pessoais.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="macronutrientes-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="macro-peso">Peso (kg)</label>
+                                    <input type="number" id="macro-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="macro-altura">Altura (cm)</label>
+                                    <input type="number" id="macro-altura" step="0.1" min="50" max="250" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="macro-idade">Idade (anos)</label>
+                                    <input type="number" id="macro-idade" min="1" max="120" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="macro-sexo">Sexo</label>
+                                    <select id="macro-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="macro-atividade">Nível de Atividade</label>
+                                    <select id="macro-atividade" required>
+                                        <option value="">Selecione</option>
+                                        <option value="1.2">Sedentário</option>
+                                        <option value="1.375">Levemente ativo</option>
+                                        <option value="1.55">Moderadamente ativo</option>
+                                        <option value="1.725">Muito ativo</option>
+                                        <option value="1.9">Extremamente ativo</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="macro-objetivo">Objetivo</label>
+                                    <select id="macro-objetivo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="perder">Perder peso</option>
+                                        <option value="manter">Manter peso</option>
+                                        <option value="ganhar">Ganhar peso</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-chart-pie"></i>
+                                Calcular Macronutrientes
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="macronutrientes-result">
+                            <div class="result__summary">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Calorias Totais</h3>
+                                    <div class="result__value" id="macro-calorias-total">--</div>
+                                    <div class="result__unit">kcal/dia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Proteínas</h3>
+                                    <div class="result__value" id="macro-proteinas-g">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="macro-proteinas-percent">--</div>
+                                    <div class="result__calories" id="macro-proteinas-kcal">-- kcal</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Carboidratos</h3>
+                                    <div class="result__value" id="macro-carboidratos-g">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="macro-carboidratos-percent">--</div>
+                                    <div class="result__calories" id="macro-carboidratos-kcal">-- kcal</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Gorduras</h3>
+                                    <div class="result__value" id="macro-gorduras-g">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                    <div class="result__percentage" id="macro-gorduras-percent">--</div>
+                                    <div class="result__calories" id="macro-gorduras-kcal">-- kcal</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('macronutrientes')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gasto Calórico Calculator -->
+                <div class="calculator" id="gasto-calorico">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Gasto Calórico em Atividades</h2>
+                        <p class="calculator__description">
+                            Calcula quantas calorias você queima em diferentes atividades físicas baseado em seu peso e duração do exercício.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="gasto-calorico-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="gasto-peso">Peso (kg)</label>
+                                    <input type="number" id="gasto-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="gasto-duracao">Duração (minutos)</label>
+                                    <input type="number" id="gasto-duracao" min="1" max="480" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="gasto-atividade">Atividade Física</label>
+                                <select id="gasto-atividade" required>
+                                    <option value="">Selecione a atividade</option>
+                                    <option value="3.5">Caminhada lenta (3 km/h)</option>
+                                    <option value="4.3">Caminhada moderada (5 km/h)</option>
+                                    <option value="5.0">Caminhada rápida (6 km/h)</option>
+                                    <option value="8.0">Corrida leve (8 km/h)</option>
+                                    <option value="10.0">Corrida moderada (10 km/h)</option>
+                                    <option value="12.0">Corrida rápida (12 km/h)</option>
+                                    <option value="6.0">Ciclismo recreativo</option>
+                                    <option value="8.0">Ciclismo moderado</option>
+                                    <option value="12.0">Ciclismo intenso</option>
+                                    <option value="4.0">Natação recreativa</option>
+                                    <option value="8.0">Natação moderada</option>
+                                    <option value="11.0">Natação intensa</option>
+                                    <option value="6.0">Musculação moderada</option>
+                                    <option value="8.0">Musculação intensa</option>
+                                    <option value="7.0">Futebol</option>
+                                    <option value="8.0">Basquete</option>
+                                    <option value="6.0">Tênis</option>
+                                    <option value="5.0">Vôlei</option>
+                                    <option value="3.0">Yoga</option>
+                                    <option value="5.0">Pilates</option>
+                                    <option value="7.0">Dança</option>
+                                    <option value="4.0">Alongamento</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-running"></i>
+                                Calcular Gasto
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="gasto-calorico-result">
+                            <div class="result__card highlight">
+                                <h3 class="result__title">Calorias Queimadas</h3>
+                                <div class="result__value" id="gasto-calorias">--</div>
+                                <div class="result__unit">kcal</div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Equivalências</h4>
+                                <div class="equivalencias" id="gasto-equivalencias">
+                                    <!-- Será preenchido dinamicamente -->
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('gasto-calorico')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Água Calculator -->
+                <div class="calculator" id="agua">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Quantidade de Água por Dia</h2>
+                        <p class="calculator__description">
+                            Calcula a quantidade ideal de água que você deve beber diariamente baseada em seu peso, atividade e clima.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="agua-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="agua-peso">Peso (kg)</label>
+                                    <input type="number" id="agua-peso" step="0.1" min="1" max="300" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="agua-atividade">Nível de Atividade</label>
+                                    <select id="agua-atividade" required>
+                                        <option value="">Selecione</option>
+                                        <option value="1.0">Sedentário</option>
+                                        <option value="1.2">Atividade leve</option>
+                                        <option value="1.4">Atividade moderada</option>
+                                        <option value="1.6">Atividade intensa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="agua-clima">Clima</label>
+                                    <select id="agua-clima" required>
+                                        <option value="">Selecione</option>
+                                        <option value="1.0">Temperado/Frio</option>
+                                        <option value="1.2">Quente/Seco</option>
+                                        <option value="1.3">Muito quente/Úmido</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="agua-idade">Idade (anos)</label>
+                                    <input type="number" id="agua-idade" min="1" max="120" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-tint"></i>
+                                Calcular Hidratação
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="agua-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Água Diária</h3>
+                                    <div class="result__value" id="agua-litros">--</div>
+                                    <div class="result__unit">litros</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Copos (200ml)</h3>
+                                    <div class="result__value" id="agua-copos">--</div>
+                                    <div class="result__unit">copos</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Por Hora</h3>
+                                    <div class="result__value" id="agua-hora">--</div>
+                                    <div class="result__unit">ml/h</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('agua')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Índice Glicêmico Calculator -->
+                <div class="calculator" id="indice-glicemico">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Índice Glicêmico</h2>
+                        <p class="calculator__description">
+                            Consulte o índice glicêmico de diferentes alimentos e calcule o impacto na glicemia de suas refeições.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="indice-glicemico-form">
+                            <div class="form-group">
+                                <label for="ig-alimento">Alimento</label>
+                                <select id="ig-alimento" required>
+                                    <option value="">Selecione um alimento</option>
+                                    <option value="15">Amendoim</option>
+                                    <option value="25">Leite integral</option>
+                                    <option value="30">Feijão preto</option>
+                                    <option value="35">Maçã</option>
+                                    <option value="40">Aveia</option>
+                                    <option value="45">Laranja</option>
+                                    <option value="50">Banana</option>
+                                    <option value="55">Arroz integral</option>
+                                    <option value="60">Mel</option>
+                                    <option value="65">Pão integral</option>
+                                    <option value="70">Arroz branco</option>
+                                    <option value="75">Melancia</option>
+                                    <option value="80">Pão branco</option>
+                                    <option value="85">Batata cozida</option>
+                                    <option value="90">Flocos de milho</option>
+                                    <option value="95">Batata frita</option>
+                                    <option value="100">Glicose</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ig-quantidade">Quantidade (g)</label>
+                                    <input type="number" id="ig-quantidade" min="1" max="1000" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ig-carboidratos">Carboidratos por 100g</label>
+                                    <input type="number" id="ig-carboidratos" step="0.1" min="0" max="100" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-chart-line"></i>
+                                Calcular IG
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="indice-glicemico-result">
+                            <div class="result__grid">
+                                <div class="result__card">
+                                    <h3 class="result__title">Índice Glicêmico</h3>
+                                    <div class="result__value" id="ig-valor">--</div>
+                                    <div class="result__classification" id="ig-classificacao">--</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Carga Glicêmica</h3>
+                                    <div class="result__value" id="ig-carga">--</div>
+                                    <div class="result__classification" id="ig-carga-classificacao">--</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Interpretação</h4>
+                                <div class="ig-info">
+                                    <div class="ig-legend">
+                                        <div class="ig-item">
+                                            <span class="ig-color low"></span>
+                                            <span>IG Baixo: ≤ 55</span>
+                                        </div>
+                                        <div class="ig-item">
+                                            <span class="ig-color medium"></span>
+                                            <span>IG Médio: 56-69</span>
+                                        </div>
+                                        <div class="ig-item">
+                                            <span class="ig-color high"></span>
+                                            <span>IG Alto: ≥ 70</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('indice-glicemico')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fibras Calculator -->
+                <div class="calculator" id="fibras">
+                    <div class="calculator__header">
+                        <h2 class="calculator__title">Calculadora de Quantidade Ideal de Fibras</h2>
+                        <p class="calculator__description">
+                            Calcula a quantidade ideal de fibras que você deve consumir diariamente baseada em sua idade e sexo.
+                        </p>
+                    </div>
+                    
+                    <div class="calculator__content">
+                        <form class="calculator__form" id="fibras-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fibras-idade">Idade (anos)</label>
+                                    <input type="number" id="fibras-idade" min="1" max="120" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="fibras-sexo">Sexo</label>
+                                    <select id="fibras-sexo" required>
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fibras-objetivo">Objetivo</label>
+                                <select id="fibras-objetivo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="manutencao">Manutenção da saúde</option>
+                                    <option value="perda-peso">Perda de peso</option>
+                                    <option value="digestao">Melhora da digestão</option>
+                                    <option value="colesterol">Controle do colesterol</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-leaf"></i>
+                                Calcular Fibras
+                            </button>
+                        </form>
+                        
+                        <div class="calculator__result" id="fibras-result">
+                            <div class="result__grid">
+                                <div class="result__card highlight">
+                                    <h3 class="result__title">Fibras Diárias</h3>
+                                    <div class="result__value" id="fibras-gramas">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Solúveis</h3>
+                                    <div class="result__value" id="fibras-soluveis">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                </div>
+                                
+                                <div class="result__card">
+                                    <h3 class="result__title">Insolúveis</h3>
+                                    <div class="result__value" id="fibras-insoluveis">--</div>
+                                    <div class="result__unit">g/dia</div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__info">
+                                <h4>Fontes de Fibras</h4>
+                                <div class="fibras-fontes">
+                                    <div class="fonte-item">
+                                        <strong>Solúveis:</strong> Aveia, feijão, maçã, laranja, cenoura
+                                    </div>
+                                    <div class="fonte-item">
+                                        <strong>Insolúveis:</strong> Trigo integral, vegetais folhosos, nozes
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="result__actions">
+                                <button class="btn btn--secondary" onclick="copyResult('fibras')">
+                                    <i class="fas fa-copy"></i>
+                                    Copiar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <i class="fas fa-calculator footer__icon"></i>
+                    <span class="footer__title">Calcule Sua Saúde</span>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="../index.html" class="footer__link">Início</a>
+                    <a href="#calculadoras" class="footer__link">Calculadoras</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copy">
+                    © 2024 Calculadoras de Saúde. Todos os direitos reservados.
+                </p>
+                <p class="footer__disclaimer">
+                    As calculadoras são para fins informativos. Consulte sempre um profissional de saúde.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/nutricionais.js"></script>
+</body>
+</html>
